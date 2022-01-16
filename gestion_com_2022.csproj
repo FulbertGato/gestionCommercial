@@ -64,6 +64,27 @@
     <Compile Include="Commande.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="dao\CategorieDao.cs" />
+    <Compile Include="dao\ClientDao.cs" />
+    <Compile Include="dao\CommandeDao.cs" />
+    <Compile Include="dao\DetailCommandeDao.cs" />
+    <Compile Include="dao\ImageDao.cs" />
+    <Compile Include="dao\interfaces\ICategorieDao.cs" />
+    <Compile Include="dao\interfaces\IClientDao.cs" />
+    <Compile Include="dao\interfaces\ICommandeDao.cs" />
+    <Compile Include="dao\interfaces\IDao.cs" />
+    <Compile Include="dao\interfaces\IDetailCommandesDao.cs" />
+    <Compile Include="dao\interfaces\IImageDao.cs" />
+    <Compile Include="dao\interfaces\ILivraisonDao.cs" />
+    <Compile Include="dao\interfaces\ILivreurDao.cs" />
+    <Compile Include="dao\interfaces\IPaiementDao.cs" />
+    <Compile Include="dao\interfaces\IProduitDao.cs" />
+    <Compile Include="dao\interfaces\IUserDao.cs" />
+    <Compile Include="dao\LivraisonDao.cs" />
+    <Compile Include="dao\LivreurDao.cs" />
+    <Compile Include="dao\PaiementDao.cs" />
+    <Compile Include="dao\ProduitDao.cs" />
+    <Compile Include="dao\UserDao.cs" />
     <Compile Include="DetailCommande.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -153,6 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fabrique\" />
+    <Folder Include="ressources\" />
+    <Folder Include="service\" />
+    <Folder Include="views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
