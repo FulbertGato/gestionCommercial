@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace gestion_com_2022.dao.interfaces
 {
-    public interface IUserDao
+    public interface IUserDao : IDao<User>
     {
+        User findUserByLoginAndPassword(String login, String password);
     }
 }

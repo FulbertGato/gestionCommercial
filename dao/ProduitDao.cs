@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestion_com_2022.dao
 {
-    public class ProduitDao
+    public class ProduitDao : interfaces.IProduitDao
     {
     }
 }
