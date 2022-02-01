@@ -23,7 +23,7 @@ namespace gestion_com_2022.dao
 
         public User findUserByLoginAndPassword(string login, string password)
         {
-            User user = model.Users.Where(s => s.Login == login  && s.Login == password).FirstOrDefault();
+            User user = model.Users.Where(s => s.Login == login  && s.Password == password).FirstOrDefault();
             return user;
         }
 

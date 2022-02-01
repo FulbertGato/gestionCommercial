@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gestion_com_2022.views
+namespace gestion_com_2022.views.Authentification
 
 {
     public partial class registerForm : Form
@@ -53,7 +53,7 @@ namespace gestion_com_2022.views
 
         private void registerForm_Load(object sender, EventArgs e)
         {
-
+            labelError.Visible = false;
         }
 
         private void handleRegister(object sender, EventArgs e)
@@ -63,29 +63,65 @@ namespace gestion_com_2022.views
             string prenom = textPrenom.Text.Trim();
             string password = textPassword.Text.Trim();
             string telephone = textPhone.Text;
+            string addresse = textAdresse.Text;
 
-            Client user = new Client() { 
-                
-                Login=email,
-                Fullname = nom+" "+prenom,
-                Password = password,
-                Telephone= telephone,
-            
-                Solde= 0,
-            Adresse= "adresse 1"};
-            service.addClient(user);
-            Console.WriteLine("Client Ajouter . tu veux verifier ?");
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(prenom) || string.IsNullOrEmpty(nom) || string.IsNullOrEmpty(telephone))
+            {
+                MessageBox.Show("Verifier votre saisie",
+                    "Erreur",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                Client user = new Client()
+                {
 
+                    Login = email,
+                    Fullname = nom + " " + prenom,
+                    Password = password,
+                    Telephone = telephone,
+                    Adresse = addresse,
+                    Solde = 0
+                };
+                int id = service.addClient(user);
+                if (id <= 0)
+                {
+
+                    labelError.Visible = true;
+
+                }
+                else
+                {
+                    Login login = new Login();
+                    login.Show();
+                    this.Hide();
+                }
+            }
         }
 
         private void handleClear(object sender, EventArgs e)
         {
-
+            labelError.Visible = false;
+            textEmail.Clear();
+            textNom.Clear();
+            textPrenom.Clear();
+            textPassword.Clear();
+            textPhone.Clear();
+            textAdresse.Clear();
         }
 
         private void handleConnexion(object sender, EventArgs e)
         {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
 
+        private void labelError_Click(object sender, EventArgs e)
+        {
+
+                
         }
     }
 }

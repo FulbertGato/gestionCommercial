@@ -55,7 +55,7 @@ namespace gestion_com_2022.service
 
         public User searchUserLoginAndPassword(string login, string password)
         {
-            throw new NotImplementedException();
+            return this.userDao.findUserByLoginAndPassword(login,password);
         }
 
         public DataTable showAllUsers()

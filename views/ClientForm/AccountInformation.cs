@@ -8,26 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gestion_com_2022.views.Authentification
+namespace gestion_com_2022.views.ClientForm
 {
-    public partial class Login : Form
+    public partial class AccountInformation : Form
     {
-        public Login()
+        public AccountInformation()
         {
             InitializeComponent();
         }
 
-        private void labelTite_Click(object sender, EventArgs e)
+        public AccountInformation(Client client)
         {
-
+            InitializeComponent();
         }
 
-        private void HandleInscription(object sender, EventArgs e)
-        {
-
-        }
-
-        private void handleConnexion(object sender, EventArgs e)
+        private void AccountInformation_Load(object sender, EventArgs e)
         {
 
         }

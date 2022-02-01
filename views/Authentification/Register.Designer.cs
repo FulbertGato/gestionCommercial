@@ -1,5 +1,5 @@
 ﻿
-namespace gestion_com_2022.views
+namespace gestion_com_2022.views.Authentification
 {
     partial class registerForm
     {
@@ -34,8 +34,8 @@ namespace gestion_com_2022.views
             this.textEmail = new System.Windows.Forms.TextBox();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.textConfirmPassword = new System.Windows.Forms.TextBox();
-            this.labelConfirmPassword = new System.Windows.Forms.Label();
+            this.textAdresse = new System.Windows.Forms.TextBox();
+            this.labelAdresse = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@ namespace gestion_com_2022.views
             this.textNom = new System.Windows.Forms.TextBox();
             this.textPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTite
@@ -53,7 +54,7 @@ namespace gestion_com_2022.views
             this.labelTite.AutoSize = true;
             this.labelTite.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTite.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.labelTite.Location = new System.Drawing.Point(246, 50);
+            this.labelTite.Location = new System.Drawing.Point(220, 9);
             this.labelTite.Name = "labelTite";
             this.labelTite.Size = new System.Drawing.Size(272, 27);
             this.labelTite.TabIndex = 0;
@@ -104,28 +105,28 @@ namespace gestion_com_2022.views
             this.labelPassword.Text = "Password";
             this.labelPassword.Click += new System.EventHandler(this.label2_Click_1);
             // 
-            // textConfirmPassword
+            // textAdresse
             // 
-            this.textConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.textConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textConfirmPassword.Font = new System.Drawing.Font("MS PGothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textConfirmPassword.Location = new System.Drawing.Point(385, 253);
-            this.textConfirmPassword.Multiline = true;
-            this.textConfirmPassword.Name = "textConfirmPassword";
-            this.textConfirmPassword.Size = new System.Drawing.Size(318, 29);
-            this.textConfirmPassword.TabIndex = 3;
-            this.textConfirmPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textAdresse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
+            this.textAdresse.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textAdresse.Font = new System.Drawing.Font("MS PGothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textAdresse.Location = new System.Drawing.Point(385, 253);
+            this.textAdresse.Multiline = true;
+            this.textAdresse.Name = "textAdresse";
+            this.textAdresse.Size = new System.Drawing.Size(318, 29);
+            this.textAdresse.TabIndex = 3;
+            this.textAdresse.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // labelConfirmPassword
+            // labelAdresse
             // 
-            this.labelConfirmPassword.AutoSize = true;
-            this.labelConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.labelConfirmPassword.Location = new System.Drawing.Point(382, 224);
-            this.labelConfirmPassword.Name = "labelConfirmPassword";
-            this.labelConfirmPassword.Size = new System.Drawing.Size(120, 17);
-            this.labelConfirmPassword.TabIndex = 4;
-            this.labelConfirmPassword.Text = "Confirm Password";
-            this.labelConfirmPassword.Click += new System.EventHandler(this.label2_Click_1);
+            this.labelAdresse.AutoSize = true;
+            this.labelAdresse.ForeColor = System.Drawing.Color.Black;
+            this.labelAdresse.Location = new System.Drawing.Point(382, 224);
+            this.labelAdresse.Name = "labelAdresse";
+            this.labelAdresse.Size = new System.Drawing.Size(64, 17);
+            this.labelAdresse.TabIndex = 4;
+            this.labelAdresse.Text = "Addresse";
+            this.labelAdresse.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // button1
             // 
@@ -243,12 +244,25 @@ namespace gestion_com_2022.views
             this.label4.TabIndex = 13;
             this.label4.Text = "Téléphone";
             // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(276, 63);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(254, 27);
+            this.labelError.TabIndex = 14;
+            this.labelError.Text = "Verifier votre saisie";
+            this.labelError.Click += new System.EventHandler(this.labelError_Click);
+            // 
             // registerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 444);
+            this.Controls.Add(this.labelError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textPhone);
             this.Controls.Add(this.textNom);
@@ -259,8 +273,8 @@ namespace gestion_com_2022.views
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelConfirmPassword);
-            this.Controls.Add(this.textConfirmPassword);
+            this.Controls.Add(this.labelAdresse);
+            this.Controls.Add(this.textAdresse);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textPassword);
             this.Controls.Add(this.textEmail);
@@ -285,8 +299,8 @@ namespace gestion_com_2022.views
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.Label labelPassword;
-        private System.Windows.Forms.TextBox textConfirmPassword;
-        private System.Windows.Forms.Label labelConfirmPassword;
+        private System.Windows.Forms.TextBox textAdresse;
+        private System.Windows.Forms.Label labelAdresse;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
@@ -297,5 +311,6 @@ namespace gestion_com_2022.views
         private System.Windows.Forms.TextBox textNom;
         private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelError;
     }
 }

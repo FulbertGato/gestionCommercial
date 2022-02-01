@@ -37,6 +37,7 @@ namespace gestion_com_2022.views.Authentification
             this.textEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelTite = new System.Windows.Forms.Label();
+            this.labetTxtError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelInscription
@@ -44,7 +45,7 @@ namespace gestion_com_2022.views.Authentification
             this.labelInscription.AutoSize = true;
             this.labelInscription.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelInscription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(86)))), ((int)(((byte)(174)))));
-            this.labelInscription.Location = new System.Drawing.Point(194, 265);
+            this.labelInscription.Location = new System.Drawing.Point(194, 320);
             this.labelInscription.Name = "labelInscription";
             this.labelInscription.Size = new System.Drawing.Size(47, 13);
             this.labelInscription.TabIndex = 24;
@@ -55,7 +56,7 @@ namespace gestion_com_2022.views.Authentification
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(96, 265);
+            this.label2.Location = new System.Drawing.Point(96, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 13);
             this.label2.TabIndex = 23;
@@ -68,7 +69,7 @@ namespace gestion_com_2022.views.Authentification
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(99, 217);
+            this.button1.Location = new System.Drawing.Point(99, 272);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(581, 35);
             this.button1.TabIndex = 21;
@@ -80,7 +81,7 @@ namespace gestion_com_2022.views.Authentification
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.ForeColor = System.Drawing.Color.Black;
-            this.labelPassword.Location = new System.Drawing.Point(96, 140);
+            this.labelPassword.Location = new System.Drawing.Point(96, 193);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(53, 13);
             this.labelPassword.TabIndex = 19;
@@ -91,18 +92,19 @@ namespace gestion_com_2022.views.Authentification
             this.textPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textPassword.Font = new System.Drawing.Font("MS PGothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPassword.Location = new System.Drawing.Point(99, 167);
+            this.textPassword.Location = new System.Drawing.Point(99, 220);
             this.textPassword.Multiline = true;
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(581, 29);
             this.textPassword.TabIndex = 17;
+            this.textPassword.TextChanged += new System.EventHandler(this.textPassword_TextChanged);
             // 
             // textEmail
             // 
             this.textEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
             this.textEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textEmail.Font = new System.Drawing.Font("MS PGothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEmail.Location = new System.Drawing.Point(99, 83);
+            this.textEmail.Location = new System.Drawing.Point(99, 151);
             this.textEmail.Multiline = true;
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(581, 29);
@@ -112,7 +114,7 @@ namespace gestion_com_2022.views.Authentification
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.ForeColor = System.Drawing.Color.Black;
-            this.labelEmail.Location = new System.Drawing.Point(96, 57);
+            this.labelEmail.Location = new System.Drawing.Point(96, 125);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 15;
@@ -130,12 +132,25 @@ namespace gestion_com_2022.views.Authentification
             this.labelTite.Text = "Bienvenue Sur NASA";
             this.labelTite.Click += new System.EventHandler(this.labelTite_Click);
             // 
+            // labetTxtError
+            // 
+            this.labetTxtError.AutoSize = true;
+            this.labetTxtError.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labetTxtError.ForeColor = System.Drawing.Color.Red;
+            this.labetTxtError.Location = new System.Drawing.Point(104, 34);
+            this.labetTxtError.Name = "labetTxtError";
+            this.labetTxtError.Size = new System.Drawing.Size(576, 73);
+            this.labetTxtError.TabIndex = 25;
+            this.labetTxtError.Text = "Vérifier votre saisie";
+            this.labetTxtError.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(742, 354);
+            this.Controls.Add(this.labetTxtError);
             this.Controls.Add(this.labelInscription);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
@@ -145,7 +160,10 @@ namespace gestion_com_2022.views.Authentification
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelTite);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(220, 9);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +178,6 @@ namespace gestion_com_2022.views.Authentification
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelTite;
+        private System.Windows.Forms.Label labetTxtError;
     }
 }
