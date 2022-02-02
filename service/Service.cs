@@ -53,6 +53,11 @@ namespace gestion_com_2022.service
             throw new NotImplementedException();
         }
 
+        public Client searchClientByUserId(int id)
+        {
+            return this.clientDao.findById(id);
+        }
+
         public User searchUserLoginAndPassword(string login, string password)
         {
             return this.userDao.findUserByLoginAndPassword(login,password);
@@ -61,6 +66,11 @@ namespace gestion_com_2022.service
         public DataTable showAllUsers()
         {
             throw new NotImplementedException();
+        }
+
+        public int updateClient(Client client)
+        {
+            return this.clientDao.update(client);
         }
 
         public int updateUser(User user)

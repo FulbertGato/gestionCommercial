@@ -59,7 +59,6 @@ namespace gestion_com_2022.views.Authentification
             this.labelTite.Size = new System.Drawing.Size(272, 27);
             this.labelTite.TabIndex = 0;
             this.labelTite.Text = "Bienvenue Sur NASA";
-            this.labelTite.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelEmail
             // 
@@ -70,7 +69,6 @@ namespace gestion_com_2022.views.Authentification
             this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 1;
             this.labelEmail.Text = "Email";
-            this.labelEmail.Click += new System.EventHandler(this.label2_Click);
             // 
             // textEmail
             // 
@@ -103,7 +101,6 @@ namespace gestion_com_2022.views.Authentification
             this.labelPassword.Size = new System.Drawing.Size(66, 17);
             this.labelPassword.TabIndex = 4;
             this.labelPassword.Text = "Password";
-            this.labelPassword.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // textAdresse
             // 
@@ -115,7 +112,6 @@ namespace gestion_com_2022.views.Authentification
             this.textAdresse.Name = "textAdresse";
             this.textAdresse.Size = new System.Drawing.Size(318, 29);
             this.textAdresse.TabIndex = 3;
-            this.textAdresse.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelAdresse
             // 
@@ -126,7 +122,6 @@ namespace gestion_com_2022.views.Authentification
             this.labelAdresse.Size = new System.Drawing.Size(64, 17);
             this.labelAdresse.TabIndex = 4;
             this.labelAdresse.Text = "Addresse";
-            this.labelAdresse.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // button1
             // 
@@ -166,7 +161,6 @@ namespace gestion_com_2022.views.Authentification
             this.label2.Size = new System.Drawing.Size(133, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "J\'ai déja un compte ";
-            this.label2.Click += new System.EventHandler(this.label2_Click_2);
             // 
             // label3
             // 
@@ -210,7 +204,6 @@ namespace gestion_com_2022.views.Authentification
             this.labelNom.Size = new System.Drawing.Size(38, 17);
             this.labelNom.TabIndex = 10;
             this.labelNom.Text = "Nom";
-            this.labelNom.Click += new System.EventHandler(this.label4_Click);
             // 
             // textNom
             // 
@@ -254,7 +247,6 @@ namespace gestion_com_2022.views.Authentification
             this.labelError.Size = new System.Drawing.Size(254, 27);
             this.labelError.TabIndex = 14;
             this.labelError.Text = "Verifier votre saisie";
-            this.labelError.Click += new System.EventHandler(this.labelError_Click);
             // 
             // registerForm
             // 

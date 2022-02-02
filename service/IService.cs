@@ -19,6 +19,9 @@ namespace gestion_com_2022.service
 
         //Gestion de compte
 
+        Client searchClientByUserId(int id);
+        int updateClient(Client client);
+
         int AddLivreur(Livreur liveur);
         int addUser(User user);
         int updateUser(User user);

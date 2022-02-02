@@ -21,36 +21,6 @@ namespace gestion_com_2022.views.Authentification
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void registerForm_Load(object sender, EventArgs e)
         {
             labelError.Visible = false;
@@ -116,12 +86,6 @@ namespace gestion_com_2022.views.Authentification
             Login login = new Login();
             login.Show();
             this.Hide();
-        }
-
-        private void labelError_Click(object sender, EventArgs e)
-        {
-
-                
         }
     }
 }

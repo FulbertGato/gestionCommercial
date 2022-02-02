@@ -18,8 +18,9 @@ namespace gestion_com_2022.dao
 
         public Client findById(int id)
         {
-            throw new NotImplementedException();
+            return (Client)model.Users.Find(id);
         }
+    
 
         public int insert(Client client)
         {
@@ -30,7 +31,12 @@ namespace gestion_com_2022.dao
 
         public int update(Client obj)
         {
-            throw new NotImplementedException();
+           Client user = (Client)model.Users.Find(obj.Id);
+            user.Fullname = obj.Fullname;
+            user.Login = obj.Login;
+            user.Telephone = obj.Telephone;
+            user.Adresse = obj.Adresse;
+            return model.SaveChanges();
         }
     }
 }

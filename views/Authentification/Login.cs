@@ -1,6 +1,6 @@
 ﻿using gestion_com_2022.fabrique;
 using gestion_com_2022.service;
-using gestion_com_2022.views.Client;
+using gestion_com_2022.views.ClientForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -83,7 +83,7 @@ namespace gestion_com_2022.views.ClientForm
             panel1.Top = btnShowAccount.Top;
             panel1.Left = btnShowAccount.Left;
             btnShowAccount.BackColor = Color.FromArgb(46, 51, 73);
-            loadform(new AccountInformation());
+            loadform(new AccountInformation((Client)this.userConnect));
         }
 
         private void btnShowAccount_Leave(object sender, EventArgs e)
