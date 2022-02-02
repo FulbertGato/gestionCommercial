@@ -306,7 +306,7 @@
           <EntitySet Name="Livraisons" EntityType="Model1.Livraison" />
           <EntitySet Name="Commandes" EntityType="Model1.Commande" />
           <EntitySet Name="Paiements" EntityType="Model1.Paiement" />
-          <EntitySet Name="Images" EntityType="Model1.Image" />
+          <EntitySet Name="Images" EntityType="Model1.Images" />
           <EntitySet Name="Produits" EntityType="Model1.Produit" />
           <EntitySet Name="Categories" EntityType="Model1.Categorie" />
           <AssociationSet Name="ProduitCategorie" Association="Model1.ProduitCategorie">
@@ -409,7 +409,7 @@
           <Property Name="ClientId" Type="Int32" Nullable="false" />
           <Property Name="Reference" Type="String" Nullable="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Image">
+        <EntityType Name="Images">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -457,7 +457,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="ImageProduit">
-          <End Type="Model1.Image" Role="Image" Multiplicity="*" />
+          <End Type="Model1.Images" Role="Image" Multiplicity="*" />
           <End Type="Model1.Produit" Role="Produit" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="Produit">
@@ -615,7 +615,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Images">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Image)">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Images)">
         <MappingFragment StoreEntitySet="Images">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ImageByte" ColumnName="ImageByte" />

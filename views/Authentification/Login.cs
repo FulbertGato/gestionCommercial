@@ -1,6 +1,7 @@
 ﻿using gestion_com_2022.fabrique;
 using gestion_com_2022.service;
 using gestion_com_2022.views.ClientForm;
+using gestion_com_2022.views.GestionnaireForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,10 +58,18 @@ namespace gestion_com_2022.views.Authentification
                 }
                 else
                 {
-                    DashboardClient dashboardClient = new DashboardClient(user);
-                    dashboardClient.Show();
+                    
+                    
+                    if(user.Role == "ROLE_CLIENT"){
+                        DashboardClient dashboardClient = new DashboardClient(user);
+                        dashboardClient.Show();
+                    }
+                    else
+                    {
+                        DashboardGestionnaire dashboardGestionnaire = new DashboardGestionnaire();
+                        dashboardGestionnaire.Show();
+                    }
                     this.Hide();
-
 
                 }
             }

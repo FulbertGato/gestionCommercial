@@ -15,27 +15,18 @@ namespace gestion_com_2022
 using System;
     using System.Collections.Generic;
     
-public partial class User
+public partial class Images
 {
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public User()
-    {
-
-        this.Role = "ROLE_CLIENT";
-
-    }
-
 
     public int Id { get; set; }
 
-    public string Login { get; set; }
+    public byte ImageByte { get; set; }
 
-    public string Password { get; set; }
+    public int ProduitId { get; set; }
 
-    public string Fullname { get; set; }
 
-    public string Role { get; set; }
+
+    public virtual Produit Produit { get; set; }
 
 }
 

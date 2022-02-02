@@ -1,5 +1,4 @@
-﻿
-using gestion_com_2022.views.Authentification;
+﻿using gestion_com_2022.views.Authentification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace gestion_com_2022
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new registerForm());
+            Application.Run(new Login());
         }
     }
 }

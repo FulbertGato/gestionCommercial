@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestion_com_2022.dao.interfaces
 {
-    public interface IProduitDao
+    public interface IProduitDao:IDao<Produit>
     {
     }
 }

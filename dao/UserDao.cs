@@ -37,5 +37,8 @@ namespace gestion_com_2022.dao
         {
             return model.SaveChanges();
         }
+
+
+
     }
 }

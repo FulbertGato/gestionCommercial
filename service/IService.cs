@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,13 @@ namespace gestion_com_2022.service
 
         int deleteUser(int id);
         DataTable showAllUsers();
-       
+
+
+        //Gestion produit
+
+        DbSet<Categorie> showAllCategories();
+        int addCategorie(Categorie cat);
+        int editCategorie(Categorie cat);
+        int addProduit(Produit produit);
     }
 }

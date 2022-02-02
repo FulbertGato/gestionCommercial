@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ namespace gestion_com_2022.service
         private IUserDao userDao;
         private IClientDao clientDao;
         private ILivreurDao livreurDao;
+        private ICategorieDao categorieDao;
+        private IProduitDao produitDao;
 
         public Service()
         {
@@ -21,17 +24,32 @@ namespace gestion_com_2022.service
 
 
         //Injection de Dépendance
-        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao)
+        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao)
         {
             this.userDao = userDao;
             this.clientDao = clientDao;
             this.livreurDao = livreurDao;
-            
+            this.CategorieDao = categorieDao;
+            this.produitDao = produitDao;
+
+
         }
 
         public IUserDao UserDao { get => userDao; set => userDao = value; }
         public IClientDao ClientDao { get => clientDao; set => clientDao = value; }
         public ILivreurDao LivreurDao { get => livreurDao; set => livreurDao = value; }
+        public ICategorieDao CategorieDao { get => categorieDao; set => categorieDao = value; }
+        public IProduitDao ProduitDao { get => produitDao; set => produitDao = value; }
+
+        public int addCategorie(Categorie cat)
+        {
+            return this.categorieDao.insert(cat);
+        }
+
+        public int editCategorie(Categorie cat)
+        {
+            return this.categorieDao.update(cat);
+        }
 
         public int addClient(Client client)
         {
@@ -53,6 +71,8 @@ namespace gestion_com_2022.service
             throw new NotImplementedException();
         }
 
+       
+
         public Client searchClientByUserId(int id)
         {
             return this.clientDao.findById(id);
@@ -61,6 +81,11 @@ namespace gestion_com_2022.service
         public User searchUserLoginAndPassword(string login, string password)
         {
             return this.userDao.findUserByLoginAndPassword(login,password);
+        }
+
+        public DbSet<Categorie> showAllCategories()
+        {
+            return this.categorieDao.findAll();
         }
 
         public DataTable showAllUsers()
@@ -74,6 +99,11 @@ namespace gestion_com_2022.service
         }
 
         public int updateUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int addProduit(Produit produit)
         {
             throw new NotImplementedException();
         }
