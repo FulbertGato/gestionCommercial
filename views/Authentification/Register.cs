@@ -1,5 +1,6 @@
 ﻿using gestion_com_2022.fabrique;
 using gestion_com_2022.service;
+using gestion_com_2022.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,10 @@ namespace gestion_com_2022.views.Authentification
                 }
                 else
                 {
-                    Login login = new Login();
+                    NotificationSend sendNotif = new NotificationSend();
+                    sendNotif.emailSend(user.Login,"COMPTE CREER", "VOTRE COMPTE EST BIEN CREER");
+                  
+                   Login login = new Login();
                     login.Show();
                     this.Hide();
                 }
