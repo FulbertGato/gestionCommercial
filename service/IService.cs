@@ -37,5 +37,9 @@ namespace gestion_com_2022.service
         int addCategorie(Categorie cat);
         int editCategorie(Categorie cat);
         int addProduit(Produit produit);
+        DbSet<Produit> showAllProduits();
+        int EditProduit(Produit produit);
+        Produit findProduitById(int v);
+        int addCommande(Commande cmd);
     }
 }
