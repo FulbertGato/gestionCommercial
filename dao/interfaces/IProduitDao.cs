@@ -10,5 +10,6 @@ namespace gestion_com_2022.dao.interfaces
     public interface IProduitDao : IDao<Produit>
     {
         DbSet<Produit> findAll();
+        int update(int id, int stock);
     }
 }

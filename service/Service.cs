@@ -197,5 +197,15 @@ namespace gestion_com_2022.service
         {
             return this.livraisonDao.insert(livraison);
         }
+
+        public int AddLivraisonCommmande(Commande cmde)
+        {
+            return this.commandeDao.updateCommandeLivraison(cmde);
+        }
+
+        public int stockProduitupdtade(int id, int stock)
+        {
+            return this.produitDao.update(id,stock);
+        }
     }
 }

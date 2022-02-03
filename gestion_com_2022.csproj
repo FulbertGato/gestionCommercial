@@ -235,6 +235,7 @@
     <Compile Include="utils\Forms\FormUtils.cs" />
     <Compile Include="utils\ImageG\MyImage.cs" />
     <Compile Include="utils\MyFiles.cs" />
+    <Compile Include="utils\NotificationSend.cs" />
     <Compile Include="utils\PasswordEncoder.cs" />
     <Compile Include="utils\Validation\Validator.cs" />
     <Compile Include="views\Authentification\Login.cs">
@@ -399,6 +400,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <Content Include="Model2.edmx.sql" />
+    <Content Include="Model3.edmx.sql" />
+    <Content Include="Model4.edmx.sql" />
+    <Content Include="Model5.edmx.sql" />
     <None Include="ressources\home-sign.png" />
   </ItemGroup>
   <ItemGroup>

@@ -52,6 +52,10 @@
       <End Role="Client" EntitySet="Users_Client" />
       <End Role="Commande" EntitySet="Commandes" />
     </AssociationSet>
+    <AssociationSet Name="CommandeLivraison" Association="Model1.Store.CommandeLivraison">
+      <End Role="Commande" EntitySet="Commandes" />
+      <End Role="Livraison" EntitySet="Livraisons" />
+    </AssociationSet>
     <AssociationSet Name="FK_Livreur_inherits_User" Association="Model1.Store.FK_Livreur_inherits_User">
       <End Role="User" EntitySet="Users" />
       <End Role="Livreur" EntitySet="Users_Livreur" />
@@ -79,7 +83,8 @@
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Statut" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LivreurId" Type="int" Nullable="false" />
-    <Property Name="Commande_Id" Type="int" Nullable="false" />
+    <Property Name="CommandeId" Type="int" Nullable="false" />
+    <Property Name="LivraisonCommande_Livraison_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Commandes">
     <Key>
@@ -217,7 +222,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Livraison">
-        <PropertyRef Name="Commande_Id" />
+        <PropertyRef Name="LivraisonCommande_Livraison_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -266,6 +271,18 @@
       </Principal>
       <Dependent Role="Commande">
         <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CommandeLivraison">
+    <End Role="Commande" Type="Model1.Store.Commandes" Multiplicity="1" />
+    <End Role="Livraison" Type="Model1.Store.Livraisons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Commande">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Livraison">
+        <PropertyRef Name="CommandeId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -346,6 +363,10 @@
             <End Role="Client" EntitySet="Users" />
             <End Role="Commande" EntitySet="Commandes" />
           </AssociationSet>
+          <AssociationSet Name="CommandeLivraison" Association="Model1.CommandeLivraison">
+            <End Role="Commande" EntitySet="Commandes" />
+            <End Role="Livraison" EntitySet="Livraisons" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -376,9 +397,10 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
           <Property Name="Statut" Type="String" Nullable="false" />
-          <NavigationProperty Name="Commande" Relationship="Model1.LivraisonCommande" FromRole="Livraison" ToRole="Commande" />
           <NavigationProperty Name="Livreur" Relationship="Model1.LivreurLivraison" FromRole="Livraison" ToRole="Livreur" />
           <Property Name="LivreurId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Commande" Relationship="Model1.CommandeLivraison" FromRole="Livraison" ToRole="Commande" />
+          <Property Name="CommandeId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Commande">
           <Key>
@@ -391,10 +413,10 @@
           <Property Name="AdresseLivraison" Type="String" Nullable="false" />
           <Property Name="Etat" Type="String" Nullable="false" />
           <NavigationProperty Name="DetailCommandes" Relationship="Model1.CommandeDetailCommande" FromRole="Commande" ToRole="DetailCommande" />
-          <NavigationProperty Name="Livraison" Relationship="Model1.LivraisonCommande" FromRole="Commande" ToRole="Livraison" />
           <NavigationProperty Name="Paiement" Relationship="Model1.PaiementCommande" FromRole="Commande" ToRole="Paiement" />
           <NavigationProperty Name="Client" Relationship="Model1.ClientCommande" FromRole="Commande" ToRole="Client" />
           <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Livraison" Relationship="Model1.CommandeLivraison" FromRole="Commande" ToRole="Livraison" />
         </EntityType>
         <EntityType Name="Paiement">
           <Key>
@@ -547,6 +569,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="CommandeLivraison">
+          <End Type="Model1.Commande" Role="Commande" Multiplicity="1" />
+          <End Type="Model1.Livraison" Role="Livraison" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Commande">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Livraison">
+              <PropertyRef Name="CommandeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -586,6 +620,7 @@
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Statut" ColumnName="Statut" />
           <ScalarProperty Name="LivreurId" ColumnName="LivreurId" />
+          <ScalarProperty Name="CommandeId" ColumnName="CommandeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -659,7 +694,7 @@
     </EntitySetMapping>
     <AssociationSetMapping Name="LivraisonCommande" TypeName="Model1.LivraisonCommande" StoreEntitySet="Livraisons">
       <EndProperty Name="Commande">
-        <ScalarProperty Name="Id" ColumnName="Commande_Id" />
+        <ScalarProperty Name="Id" ColumnName="LivraisonCommande_Livraison_Id" />
       </EndProperty>
       <EndProperty Name="Livraison">
         <ScalarProperty Name="Id" ColumnName="Id" />

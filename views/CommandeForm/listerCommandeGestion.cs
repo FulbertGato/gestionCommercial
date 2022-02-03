@@ -103,6 +103,20 @@ namespace gestion_com_2022.views.CommandeForm
                 row.Selected = true;
                 idCmde = int.Parse(row.Cells[0].Value.ToString());
                 Commande cmde = service.findCommandeById(idCmde);
+                if (cmde.Etat != "EN ATTENTE")
+                {
+
+                    btnEnregistrer.Enabled = false;
+                    btnRupture.Enabled = false;
+                    btnCancel.Enabled = false;
+                }
+                else
+                {
+                    btnEnregistrer.Enabled = true;
+                    btnRupture.Enabled = true;
+                    btnCancel.Enabled = true;
+                }
+                
                 MessageBox.Show("" + idCmde);
                 //Données  Client
                 txtRef.Text = cmde.Numero;
@@ -122,19 +136,26 @@ namespace gestion_com_2022.views.CommandeForm
         {
             Commande cmde = service.findCommandeById(idCmde);
             cmde.Etat = "EN COURS";
-            Livraison livraison = new Livraison
-            { 
-                LivreurId = int.Parse(cmbLivreur.SelectedValue.ToString()),
-                 Commande = cmde,
-                Date = DateTime.Now,
-                Statut = "EN PREPARATION"
+            service.AddLivraisonCommmande(cmde);
 
 
-            };
+            MessageBox.Show("LIVRAISON PLANIFIER");
+            txtRef.Text = "";
+            txtEtat.Text = "";
+            textMontant.Text = "";
+            cmbLivreur.DataSource = null;
+            loadDataGridViewDetail(0);
 
-            service.addLivraison(livraison);
-
-
+            /* Livraison liv = new Livraison 
+             {
+                 CommandeId = cmde.Id,
+                 Date = DateTime.Now,
+                 LivreurId = 3,
+                 Statut= "EN PREPARATION",
+                 Commande = cmde     
+             };*/
+            //cmde.Livraison = livraison;
+            //service.addLivraison(liv);
         }
 
 
@@ -168,6 +189,20 @@ namespace gestion_com_2022.views.CommandeForm
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Commande cmde = service.findCommandeById(this.idCmde);
+            cmde.Etat = "ANNULER";
+            service.AddLivraisonCommmande(cmde);
+            MessageBox.Show("COMMANDE ANNULER");
+
+            txtRef.Text = "";
+            txtEtat.Text = "";
+            textMontant.Text = "";
+            cmbLivreur.DataSource = null;
+            loadDataGridViewDetail(0);
         }
     }
 }

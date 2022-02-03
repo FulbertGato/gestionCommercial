@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/03/2022 09:45:46
+-- Date Created: 02/03/2022 20:14:29
 -- Generated from EDMX file: F:\PROJET C#\gestion_com_2022\Model1.edmx
 -- --------------------------------------------------
 
@@ -106,7 +106,9 @@ CREATE TABLE [dbo].[Livraisons] (
     [Date] datetime  NOT NULL,
     [Statut] nvarchar(max)  NOT NULL,
     [LivreurId] int  NOT NULL,
-    [CommandeId] int  NOT NULL
+    [CommandeId] int  NOT NULL,
+    [LivraisonCommande_Livraison_Id] int  NOT NULL,
+    [Commande_Id] int  NOT NULL
 );
 GO
 
@@ -118,7 +120,8 @@ CREATE TABLE [dbo].[Commandes] (
     [Montant] float  NOT NULL,
     [AdresseLivraison] nvarchar(max)  NOT NULL,
     [Etat] nvarchar(max)  NOT NULL,
-    [ClientId] int  NOT NULL
+    [ClientId] int  NOT NULL,
+    [LivraisonId] int  NULL
 );
 GO
 
@@ -318,10 +321,10 @@ ON [dbo].[DetailCommandes]
     ([ProduitId]);
 GO
 
--- Creating foreign key on [Commande_Id] in table 'Livraisons'
+-- Creating foreign key on [LivraisonCommande_Livraison_Id] in table 'Livraisons'
 ALTER TABLE [dbo].[Livraisons]
 ADD CONSTRAINT [FK_LivraisonCommande]
-    FOREIGN KEY ([Commande_Id])
+    FOREIGN KEY ([LivraisonCommande_Livraison_Id])
     REFERENCES [dbo].[Commandes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -330,7 +333,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_LivraisonCommande'
 CREATE INDEX [IX_FK_LivraisonCommande]
 ON [dbo].[Livraisons]
-    ([Commande_Id]);
+    ([LivraisonCommande_Livraison_Id]);
 GO
 
 -- Creating foreign key on [Commande_Id] in table 'Paiements'
@@ -391,6 +394,21 @@ GO
 CREATE INDEX [IX_FK_ClientCommande]
 ON [dbo].[Commandes]
     ([ClientId]);
+GO
+
+-- Creating foreign key on [Commande_Id] in table 'Livraisons'
+ALTER TABLE [dbo].[Livraisons]
+ADD CONSTRAINT [FK_CommandeLivraison]
+    FOREIGN KEY ([Commande_Id])
+    REFERENCES [dbo].[Commandes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CommandeLivraison'
+CREATE INDEX [IX_FK_CommandeLivraison]
+ON [dbo].[Livraisons]
+    ([Commande_Id]);
 GO
 
 -- Creating foreign key on [Id] in table 'Users_Livreur'

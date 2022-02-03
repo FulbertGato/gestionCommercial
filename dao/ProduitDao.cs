@@ -45,5 +45,16 @@ namespace gestion_com_2022.dao
             return model.SaveChanges();
 
         }
+
+        public int update(int id, int stock)
+        {
+            Produit produit = model.Produits.Find(id);
+            
+          
+            produit.Stock = stock;
+            
+
+            return model.SaveChanges();
+        }
     }
 }

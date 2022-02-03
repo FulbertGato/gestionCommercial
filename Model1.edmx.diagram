@@ -20,12 +20,12 @@
         <EntityTypeShape EntityType="Model1.DetailCommande" Width="1.5" PointX="17" PointY="5" />
         <AssociationConnector Association="Model1.CommandeDetailCommande" />
         <AssociationConnector Association="Model1.ProduitDetailCommande" />
-        <AssociationConnector Association="Model1.LivraisonCommande" />
         <AssociationConnector Association="Model1.PaiementCommande" />
         <AssociationConnector Association="Model1.LivreurLivraison" />
         <InheritanceConnector EntityType="Model1.Livreur" />
         <AssociationConnector Association="Model1.ClientPaiement" />
         <AssociationConnector Association="Model1.ClientCommande" />
+        <AssociationConnector Association="Model1.CommandeLivraison" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -214,21 +214,7 @@ namespace gestion_com_2022.views.ProductForm
                             "Merci pour votre commande",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
-            // int idCommande = service.addCommande(cmd);
-            /* if (idCommande >= 1)
-             {
-                 MessageBox.Show("Commande passé",
-                             "Merci pour votre commande",
-                             MessageBoxButtons.OK,
-                             MessageBoxIcon.Warning);
-             }
-             else
-             {
-                 MessageBox.Show("Commande non enregistrer",
-                             "error ",
-                             MessageBoxButtons.OK,
-                             MessageBoxIcon.Error);
-             }*/
+            
         }
 
         private int  createCommande()
@@ -240,7 +226,7 @@ namespace gestion_com_2022.views.ProductForm
             Commande commande = new Commande
             {
     
-               // DetailCommandes = listeDetails,
+               
                 Montant = this.totalAPayer,
                 AdresseLivraison = this.client.Adresse,
                 Etat= "EN ATTENTE",
@@ -265,10 +251,13 @@ namespace gestion_com_2022.views.ProductForm
 
                 };
                 listeDetails.Add(detail);
+                int stock = produit.Stock - int.Parse(item.Cells[1].Value.ToString());
+               service.stockProduitupdtade(produit.Id, stock);
             }
 
             co.DetailCommandes = listeDetails;
             service.soldeCompteUpdate(this.client.Id, this.totalAPayer);
+            
             return service.UpdateCommandeDetails(co);
 
            

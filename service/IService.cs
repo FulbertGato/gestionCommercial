@@ -55,5 +55,7 @@ namespace gestion_com_2022.service
 
 
         int addLivraison(Livraison livraison);
+        int AddLivraisonCommmande(Commande cmde);
+        int stockProduitupdtade(int id, int stock);
     }
 }

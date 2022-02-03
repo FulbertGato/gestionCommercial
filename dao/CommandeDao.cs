@@ -64,5 +64,13 @@ namespace gestion_com_2022.dao
             commande.DetailCommandes = cmde.DetailCommandes;
             return model.SaveChanges();
         }
+
+        public int updateCommandeLivraison(Commande cmde)
+        {
+            Commande commande = model.Commandes.Find(cmde.Id);
+           // commande.Livraison = cmde.Livraison;
+            commande.Etat = cmde.Etat;
+            return model.SaveChanges();
+        }
     }
 }

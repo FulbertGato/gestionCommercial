@@ -39,6 +39,11 @@ namespace gestion_com_2022.views.CommandeForm
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvCommandes = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.btnRupture = new System.Windows.Forms.Button();
@@ -52,11 +57,6 @@ namespace gestion_com_2022.views.CommandeForm
             this.label3 = new System.Windows.Forms.Label();
             this.txtRef = new System.Windows.Forms.TextBox();
             this.dgtvDetailProd = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -180,6 +180,45 @@ namespace gestion_com_2022.views.CommandeForm
             this.dgvCommandes.TabIndex = 0;
             this.dgvCommandes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCommandes_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id1";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Numero
+            // 
+            this.Numero.DataPropertyName = "Numero";
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Width = 120;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Width = 150;
+            // 
+            // Client
+            // 
+            this.Client.DataPropertyName = "Telephone";
+            this.Client.HeaderText = "Client";
+            this.Client.Name = "Client";
+            this.Client.ReadOnly = true;
+            this.Client.Width = 200;
+            // 
+            // Montant
+            // 
+            this.Montant.DataPropertyName = "Montant";
+            this.Montant.HeaderText = "Montant";
+            this.Montant.Name = "Montant";
+            this.Montant.ReadOnly = true;
+            this.Montant.Width = 140;
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
@@ -238,6 +277,7 @@ namespace gestion_com_2022.views.CommandeForm
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label4
             // 
@@ -321,45 +361,6 @@ namespace gestion_com_2022.views.CommandeForm
             this.dgtvDetailProd.Name = "dgtvDetailProd";
             this.dgtvDetailProd.Size = new System.Drawing.Size(439, 311);
             this.dgtvDetailProd.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id1";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Numero
-            // 
-            this.Numero.DataPropertyName = "Numero";
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Width = 120;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Width = 150;
-            // 
-            // Client
-            // 
-            this.Client.DataPropertyName = "Telephone";
-            this.Client.HeaderText = "Client";
-            this.Client.Name = "Client";
-            this.Client.ReadOnly = true;
-            this.Client.Width = 200;
-            // 
-            // Montant
-            // 
-            this.Montant.DataPropertyName = "Montant";
-            this.Montant.HeaderText = "Montant";
-            this.Montant.Name = "Montant";
-            this.Montant.ReadOnly = true;
-            this.Montant.Width = 140;
             // 
             // dataGridViewTextBoxColumn1
             // 

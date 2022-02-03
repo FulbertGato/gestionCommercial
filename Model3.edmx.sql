@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/03/2022 09:45:46
+-- Date Created: 02/03/2022 19:49:32
 -- Generated from EDMX file: F:\PROJET C#\gestion_com_2022\Model1.edmx
 -- --------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE [dbo].[Livraisons] (
     [Date] datetime  NOT NULL,
     [Statut] nvarchar(max)  NOT NULL,
     [LivreurId] int  NOT NULL,
-    [CommandeId] int  NOT NULL
+    [Commande_Id] int  NOT NULL
 );
 GO
 
