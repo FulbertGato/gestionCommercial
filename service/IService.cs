@@ -21,6 +21,8 @@ namespace gestion_com_2022.service
         //Gestion de compte
 
         Client searchClientByUserId(int id);
+
+        int soldeCompteUpdate(int id, double solde);
         int updateClient(Client client);
 
         int AddLivreur(Livreur liveur);
@@ -37,5 +39,14 @@ namespace gestion_com_2022.service
         int addCategorie(Categorie cat);
         int editCategorie(Categorie cat);
         int addProduit(Produit produit);
+        DbSet<Produit> showAllProduits();
+        int EditProduit(Produit produit);
+        Produit findProduitById(int v);
+        int addCommande(Commande cmd);
+        Commande findCommandeByRef(string refgene);
+        int addDetailByList(List<DetailCommande> listeDetails);
+        List<Commande> showAllCommandesByClient(int id);
+        int UpdateCommandeDetails(Commande co);
+        Commande findCommandeById(int id);
     }
 }

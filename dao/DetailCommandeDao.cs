@@ -9,5 +9,31 @@ namespace gestion_com_2022.dao
 {
     public class DetailCommandeDao : IDetailCommandesDao
     {
+        Model1Container model = new Model1Container();
+        public int delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public DetailCommande findById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int insert(DetailCommande obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int insertDetailByList(List<DetailCommande> detailsLis)
+        {
+            model.DetailCommandes.AddRange(detailsLis);
+            return model.SaveChanges();
+        }
+
+        public int update(DetailCommande obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace gestion_com_2022.dao.interfaces
 {
     public interface IClientDao : IDao<Client>
     {
+        int soldeCompteUpdate(int id, double solde);
     }
 }

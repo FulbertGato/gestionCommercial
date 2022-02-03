@@ -29,6 +29,14 @@ namespace gestion_com_2022.dao
             return model.SaveChanges();
         }
 
+        public int soldeCompteUpdate(int id, double solde)
+        {
+            Client user = (Client)model.Users.Find(id);
+
+            user.Solde = user.Solde + solde;
+            return model.SaveChanges();
+        }
+
         public int update(Client obj)
         {
            Client user = (Client)model.Users.Find(obj.Id);
