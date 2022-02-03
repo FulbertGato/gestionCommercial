@@ -33,7 +33,7 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.userGestionBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnCommandes = new System.Windows.Forms.Button();
             this.btnCategorie = new System.Windows.Forms.Button();
@@ -53,7 +53,7 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.userGestionBtn);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnCommandes);
             this.panel1.Controls.Add(this.btnCategorie);
@@ -89,17 +89,18 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.button5.Text = "Gerer les produits";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // userGestionBtn
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(0, 387);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(433, 48);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Gerer les produits";
-            this.button4.UseVisualStyleBackColor = true;
+            this.userGestionBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userGestionBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userGestionBtn.ForeColor = System.Drawing.Color.Black;
+            this.userGestionBtn.Location = new System.Drawing.Point(0, 387);
+            this.userGestionBtn.Name = "userGestionBtn";
+            this.userGestionBtn.Size = new System.Drawing.Size(433, 48);
+            this.userGestionBtn.TabIndex = 7;
+            this.userGestionBtn.Text = "Gerer les utilisateurs";
+            this.userGestionBtn.UseVisualStyleBackColor = true;
+            this.userGestionBtn.Click += new System.EventHandler(this.userGestionBtn_Click);
             // 
             // button3
             // 
@@ -124,6 +125,7 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.btnCommandes.TabIndex = 5;
             this.btnCommandes.Text = "Listes les commandes";
             this.btnCommandes.UseVisualStyleBackColor = true;
+            this.btnCommandes.Click += new System.EventHandler(this.btnCommandes_Click);
             // 
             // btnCategorie
             // 
@@ -167,7 +169,7 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.label2.Location = new System.Drawing.Point(194, 22);
+            this.label2.Location = new System.Drawing.Point(194, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(226, 39);
             this.label2.TabIndex = 5;
@@ -199,14 +201,14 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(433, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(1091, 840);
+            this.panelContent.Size = new System.Drawing.Size(1047, 840);
             this.panelContent.TabIndex = 1;
             // 
             // DashboardGestionnaire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1524, 840);
+            this.ClientSize = new System.Drawing.Size(1480, 840);
             this.Controls.Add(this.panelContent);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -229,7 +231,7 @@ namespace gestion_com_2022.views.GestionnaireForm
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnGererProduis;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button userGestionBtn;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnCommandes;
         private System.Windows.Forms.Button btnCategorie;

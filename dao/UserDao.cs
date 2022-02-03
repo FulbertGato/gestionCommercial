@@ -16,6 +16,11 @@ namespace gestion_com_2022.dao
             return model.SaveChanges();
         }
 
+        public List<User> findAllUser()
+        {
+            return model.Users.Where(cmde => cmde.Role.CompareTo("ROLE_CLIENT") != 0).ToList();
+        }
+
         public User findById(int id)
         {
             return model.Users.Find(id);

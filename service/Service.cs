@@ -19,14 +19,15 @@ namespace gestion_com_2022.service
         private IProduitDao produitDao;
         private ICommandeDao commandeDao;
         private IDetailCommandesDao detailCommandesDao;
+        private ILivraisonDao livraisonDao;
 
         public Service()
         {
         }
 
 
-        //Injection de Dépendance
-        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao, ICommandeDao commandeDao, IDetailCommandesDao detailCommandesDao)
+        
+        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao, ICommandeDao commandeDao, IDetailCommandesDao detailCommandesDao, ILivraisonDao livraisonDao)
         {
             this.userDao = userDao;
             this.clientDao = clientDao;
@@ -35,6 +36,8 @@ namespace gestion_com_2022.service
             this.produitDao = produitDao;
             this.commandeDao = commandeDao;
             this.DetailCommandesDao = detailCommandesDao;
+            this.livraisonDao = livraisonDao;
+
 
 
         }
@@ -46,6 +49,7 @@ namespace gestion_com_2022.service
         public IProduitDao ProduitDao { get => produitDao; set => produitDao = value; }
         public ICommandeDao CommandeDao { get => commandeDao; set => commandeDao = value; }
         public IDetailCommandesDao DetailCommandesDao { get => detailCommandesDao; set => detailCommandesDao = value; }
+        public ILivraisonDao LivraisonDao { get => livraisonDao; set => livraisonDao = value; }
 
         public int addCategorie(Categorie cat)
         {
@@ -64,7 +68,7 @@ namespace gestion_com_2022.service
 
         public int AddLivreur(Livreur liveur)
         {
-            throw new NotImplementedException();
+            return this.livreurDao.insert(liveur);
         }
 
         public int addUser(User user)
@@ -94,9 +98,9 @@ namespace gestion_com_2022.service
             return this.categorieDao.findAll();
         }
 
-        public DataTable showAllUsers()
+        public List<User> showAllUsers()
         {
-            throw new NotImplementedException();
+            return this.userDao.findAllUser();
         }
 
         public int updateClient(Client client)
@@ -167,6 +171,31 @@ namespace gestion_com_2022.service
         public List<DetailCommande> showAllDetailCommandeByCommmandeId(int id)
         {
             return this.DetailCommandesDao.findAllDetailCommandeByCommmandeId(id);
+        }
+
+        public List<Commande> showAllCommandes()
+        {
+            return this.commandeDao.findAllCommande();
+        }
+
+        public List<Commande> showAllCommandes(string statut)
+        {
+            return this.commandeDao.findAllCommande(statut);
+        }
+
+        public List<Commande> showAllCommandesClientTel(string tel)
+        {
+            return this.commandeDao.findAllCommandeTelClient(tel);
+        }
+
+        public List<User> showAllLivreurs(string v)
+        {
+            return this.LivreurDao.findAll(v);
+        }
+
+        public int addLivraison(Livraison livraison)
+        {
+            return this.livraisonDao.insert(livraison);
         }
     }
 }

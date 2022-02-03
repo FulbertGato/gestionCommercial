@@ -12,5 +12,8 @@ namespace gestion_com_2022.dao.interfaces
 
         Commande findComandeByRef(String reference);
         List<Commande> findcommandeByIdClient(int id);
+        List<Commande> findAllCommande();
+        List<Commande> findAllCommande(string statut);
+        List<Commande> findAllCommandeTelClient(string tel);
     }
 }

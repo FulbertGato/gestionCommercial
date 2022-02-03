@@ -17,6 +17,23 @@ namespace gestion_com_2022.dao
             throw new NotImplementedException();
         }
 
+        public List<Commande> findAllCommande()
+        {
+            return model.Commandes.SqlQuery("SELECT * FROM Commandes").ToList();
+        }
+
+        public List<Commande> findAllCommande(string statut)
+        {
+            return model.Commandes.Where(cmde => cmde.Etat.CompareTo(statut.ToString()) == 0)
+                                           .ToList();
+        }
+
+        public List<Commande> findAllCommandeTelClient(string tel)
+        {
+            return model.Commandes.Where(cmde => cmde.Client.Telephone.CompareTo(tel.ToString()) == 0)
+                                            .ToList();
+        }
+
         public Commande findById(int id)
         {
             return model.Commandes.Find(id);

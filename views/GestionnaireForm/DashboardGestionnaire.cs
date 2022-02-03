@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gestion_com_2022.views.CommandeForm;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,20 @@ namespace gestion_com_2022.views.GestionnaireForm
             panel1.Left = btnCategorie.Left;
             btnCategorie.BackColor = Color.FromArgb(46, 51, 73);
             loadform(new CategorieGestion());
+        }
+
+        private void btnCommandes_Click(object sender, EventArgs e)
+        {
+            // loadform(new listerCommandeGestion()); }
+
+            listerCommandeGestion listerCommandeGestion = new listerCommandeGestion();
+            listerCommandeGestion.Show();
+        }
+
+        private void userGestionBtn_Click(object sender, EventArgs e)
+        {
+            loadform(new userManager());
+
         }
     }
 }

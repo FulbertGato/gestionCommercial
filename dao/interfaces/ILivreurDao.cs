@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace gestion_com_2022.dao.interfaces
 {
-    public interface ILivreurDao
+    public interface ILivreurDao:IDao<Livreur>
     {
+
+        List<User> findAll();
+        List<User> findAll(String role);
     }
 }

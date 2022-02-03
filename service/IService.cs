@@ -28,9 +28,9 @@ namespace gestion_com_2022.service
         int AddLivreur(Livreur liveur);
         int addUser(User user);
         int updateUser(User user);
-
+        List<Commande> showAllCommandes();
         int deleteUser(int id);
-        DataTable showAllUsers();
+        List<User> showAllUsers();
 
 
         //Gestion produit
@@ -49,5 +49,11 @@ namespace gestion_com_2022.service
         List<Commande> showAllCommandesByClient(int id);
         int UpdateCommandeDetails(Commande co);
         Commande findCommandeById(int id);
+        List<Commande> showAllCommandes(string statut);
+        List<Commande> showAllCommandesClientTel(string tel);
+        List<User> showAllLivreurs(string v);
+
+
+        int addLivraison(Livraison livraison);
     }
 }

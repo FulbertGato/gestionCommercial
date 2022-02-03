@@ -35,6 +35,11 @@ namespace gestion_com_2022.views.CommandeForm
             this.txtbTotalCmde = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtgvProduitsCmdes = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qte_Com = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.grpBoxProduit = new System.Windows.Forms.GroupBox();
             this.btnDate = new System.Windows.Forms.Button();
@@ -46,11 +51,6 @@ namespace gestion_com_2022.views.CommandeForm
             this.txtbCmdNomComplet = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtbCmdTel = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qte_Com = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Montant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvProduitsCmdes)).BeginInit();
@@ -101,6 +101,7 @@ namespace gestion_com_2022.views.CommandeForm
             this.btnPayCommande.TabIndex = 14;
             this.btnPayCommande.Text = "Payer";
             this.btnPayCommande.UseVisualStyleBackColor = false;
+            this.btnPayCommande.Click += new System.EventHandler(this.btnPayCommande_Click);
             // 
             // txtbTotalCmde
             // 
@@ -136,6 +137,38 @@ namespace gestion_com_2022.views.CommandeForm
             this.dtgvProduitsCmdes.Name = "dtgvProduitsCmdes";
             this.dtgvProduitsCmdes.Size = new System.Drawing.Size(638, 158);
             this.dtgvProduitsCmdes.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Libelle
+            // 
+            this.Libelle.DataPropertyName = "produitLibelle";
+            this.Libelle.HeaderText = "Libelle";
+            this.Libelle.Name = "Libelle";
+            // 
+            // Prix
+            // 
+            this.Prix.DataPropertyName = "produitPrix";
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            // 
+            // Qte_Com
+            // 
+            this.Qte_Com.DataPropertyName = "Qte1";
+            this.Qte_Com.HeaderText = "Quantité Commandée";
+            this.Qte_Com.Name = "Qte_Com";
+            this.Qte_Com.Width = 150;
+            // 
+            // Montant
+            // 
+            this.Montant.DataPropertyName = "produitMontant";
+            this.Montant.HeaderText = "Montant";
+            this.Montant.Name = "Montant";
+            this.Montant.Width = 140;
             // 
             // label13
             // 
@@ -246,38 +279,6 @@ namespace gestion_com_2022.views.CommandeForm
             this.txtbCmdTel.Name = "txtbCmdTel";
             this.txtbCmdTel.Size = new System.Drawing.Size(148, 26);
             this.txtbCmdTel.TabIndex = 14;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Libelle
-            // 
-            this.Libelle.DataPropertyName = "produitLibelle";
-            this.Libelle.HeaderText = "Libelle";
-            this.Libelle.Name = "Libelle";
-            // 
-            // Prix
-            // 
-            this.Prix.DataPropertyName = "produitPrix";
-            this.Prix.HeaderText = "Prix";
-            this.Prix.Name = "Prix";
-            // 
-            // Qte_Com
-            // 
-            this.Qte_Com.DataPropertyName = "Qte1";
-            this.Qte_Com.HeaderText = "Quantité Commandée";
-            this.Qte_Com.Name = "Qte_Com";
-            this.Qte_Com.Width = 150;
-            // 
-            // Montant
-            // 
-            this.Montant.DataPropertyName = "produitMontant";
-            this.Montant.HeaderText = "Montant";
-            this.Montant.Name = "Montant";
-            this.Montant.Width = 140;
             // 
             // CommandeDetailFrm
             // 

@@ -191,6 +191,7 @@
     <Compile Include="DetailCommande.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="dto\CommandeDto.cs" />
     <Compile Include="dto\DetailCommandeDto.cs" />
     <Compile Include="dto\IDto.cs" />
     <Compile Include="fabrique\Fabrique.cs" />
@@ -272,6 +273,12 @@
     <Compile Include="views\CommandeForm\CommandeDetailFrm.Designer.cs">
       <DependentUpon>CommandeDetailFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\CommandeForm\listerCommandeGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\CommandeForm\listerCommandeGestion.Designer.cs">
+      <DependentUpon>listerCommandeGestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\GestionnaireForm\CategorieGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +296,12 @@
     </Compile>
     <Compile Include="views\GestionnaireForm\ProduitGestions.Designer.cs">
       <DependentUpon>ProduitGestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\GestionnaireForm\userManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\GestionnaireForm\userManager.Designer.cs">
+      <DependentUpon>userManager.cs</DependentUpon>
     </Compile>
     <Compile Include="views\ProductForm\component\productWidget.cs">
       <SubType>UserControl</SubType>
@@ -331,6 +344,9 @@
     <EmbeddedResource Include="views\CommandeForm\CommandeDetailFrm.resx">
       <DependentUpon>CommandeDetailFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\CommandeForm\listerCommandeGestion.resx">
+      <DependentUpon>listerCommandeGestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\GestionnaireForm\CategorieGestion.resx">
       <DependentUpon>CategorieGestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\GestionnaireForm\ProduitGestions.resx">
       <DependentUpon>ProduitGestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\GestionnaireForm\userManager.resx">
+      <DependentUpon>userManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\ProductForm\component\productWidget.resx">
       <DependentUpon>productWidget.cs</DependentUpon>

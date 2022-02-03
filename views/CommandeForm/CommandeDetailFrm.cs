@@ -78,6 +78,11 @@ namespace gestion_com_2022.views.CommandeForm
         {
             this.Hide();
         }
+
+        private void btnPayCommande_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
