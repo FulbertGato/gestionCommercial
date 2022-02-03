@@ -1,5 +1,6 @@
 ﻿using gestion_com_2022.fabrique;
 using gestion_com_2022.service;
+using gestion_com_2022.views.CommandeForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,6 +54,9 @@ namespace gestion_com_2022.views.ClientForm
                 row.Selected = true;
                 int id = int.Parse(row.Cells[0].Value.ToString());
                 Commande commande = service.findCommandeById(id);
+                CommandeDetailFrm detailFrm = new CommandeDetailFrm(commande,this.userConnect);
+                detailFrm.Show();
+                this.Hide();
 
 
 

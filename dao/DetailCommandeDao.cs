@@ -15,6 +15,11 @@ namespace gestion_com_2022.dao
             throw new NotImplementedException();
         }
 
+        public List<DetailCommande> findAllDetailCommandeByCommmandeId(int id)
+        {
+            return model.DetailCommandes.SqlQuery("SELECT * FROM DetailCommandes WHERE CommandeId = " + id).ToList();
+        }
+
         public DetailCommande findById(int id)
         {
             throw new NotImplementedException();

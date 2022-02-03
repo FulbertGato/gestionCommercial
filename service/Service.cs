@@ -163,5 +163,10 @@ namespace gestion_com_2022.service
         {
             return this.commandeDao.findById(id);
         }
+
+        public List<DetailCommande> showAllDetailCommandeByCommmandeId(int id)
+        {
+            return this.DetailCommandesDao.findAllDetailCommandeByCommmandeId(id);
+        }
     }
 }

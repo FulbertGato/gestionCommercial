@@ -191,6 +191,8 @@
     <Compile Include="DetailCommande.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="dto\DetailCommandeDto.cs" />
+    <Compile Include="dto\IDto.cs" />
     <Compile Include="fabrique\Fabrique.cs" />
     <Compile Include="Images.cs">
       <DependentUpon>Model1.tt</DependentUpon>

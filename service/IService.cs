@@ -42,6 +42,7 @@ namespace gestion_com_2022.service
         DbSet<Produit> showAllProduits();
         int EditProduit(Produit produit);
         Produit findProduitById(int v);
+        List<DetailCommande> showAllDetailCommandeByCommmandeId(int id);
         int addCommande(Commande cmd);
         Commande findCommandeByRef(string refgene);
         int addDetailByList(List<DetailCommande> listeDetails);
