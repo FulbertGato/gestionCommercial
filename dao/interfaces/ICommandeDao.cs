@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestion_com_2022.dao.interfaces
 {
-    public interface ICommandeDao: IDao<Commande>
+    public interface ICommandeDao
     {
     }
 }

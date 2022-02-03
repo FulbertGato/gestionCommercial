@@ -8,16 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using gestion_com_2022.views.ProductForm;
-using gestion_com_2022.service;
-using gestion_com_2022.fabrique;
-
 namespace gestion_com_2022.views.ClientForm
 {
     public partial class DashboardClient : Form
     {
         private User userConnect;
-        private IService service = Fabrique.getInstanceService();
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -53,11 +48,7 @@ namespace gestion_com_2022.views.ClientForm
             panel1.Top = btnShowProduit.Top;
             panel1.Left = btnShowProduit.Left;
             btnShowProduit.BackColor = Color.FromArgb(46, 51, 73);
-            ProductlistShow productList = new ProductlistShow(service.searchClientByUserId(userConnect.Id));
-            productList.Show();
-            this.Hide();
-
-
+           
         }
 
         private void btnShowProduit_leave(object sender, EventArgs e)
@@ -84,9 +75,6 @@ namespace gestion_com_2022.views.ClientForm
             panel1.Top = btnShowCart.Top;
             panel1.Left = btnShowCart.Left;
             btnShowCart.BackColor = Color.FromArgb(46, 51, 73);
-            ProductlistShow productList = new ProductlistShow(service.searchClientByUserId(userConnect.Id));
-            productList.Show();
-            this.Hide();
         }
 
         private void btnShowAccount_Click(object sender, EventArgs e)

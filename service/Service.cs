@@ -17,7 +17,6 @@ namespace gestion_com_2022.service
         private ILivreurDao livreurDao;
         private ICategorieDao categorieDao;
         private IProduitDao produitDao;
-        private ICommandeDao commandeDao;
 
         public Service()
         {
@@ -25,14 +24,13 @@ namespace gestion_com_2022.service
 
 
         //Injection de Dépendance
-        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao, ICommandeDao commandeDao)
+        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao)
         {
             this.userDao = userDao;
             this.clientDao = clientDao;
             this.livreurDao = livreurDao;
             this.CategorieDao = categorieDao;
             this.produitDao = produitDao;
-            this.commandeDao = commandeDao;
 
 
         }
@@ -42,7 +40,6 @@ namespace gestion_com_2022.service
         public ILivreurDao LivreurDao { get => livreurDao; set => livreurDao = value; }
         public ICategorieDao CategorieDao { get => categorieDao; set => categorieDao = value; }
         public IProduitDao ProduitDao { get => produitDao; set => produitDao = value; }
-        public ICommandeDao CommandeDao { get => commandeDao; set => commandeDao = value; }
 
         public int addCategorie(Categorie cat)
         {
@@ -108,27 +105,7 @@ namespace gestion_com_2022.service
 
         public int addProduit(Produit produit)
         {
-            return this.produitDao.insert(produit);
-        }
-
-        public DbSet<Produit> showAllProduits()
-        {
-            return this.produitDao.findAll();
-        }
-
-        public int EditProduit(Produit produit)
-        {
-            return this.produitDao.update(produit);
-        }
-
-        public Produit findProduitById(int v)
-        {
-            return this.produitDao.findById(v);
-        }
-
-        public int addCommande(Commande cmd)
-        {
-            return this.commandeDao.insert(cmd);
+            throw new NotImplementedException();
         }
     }
 }

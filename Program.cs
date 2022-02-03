@@ -1,5 +1,4 @@
 ﻿using gestion_com_2022.views.Authentification;
-using gestion_com_2022.views.ProductForm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +17,7 @@ namespace gestion_com_2022
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new Login());
-            Application.Run(new ProductlistShow());
+            Application.Run(new Login());
         }
     }
 }

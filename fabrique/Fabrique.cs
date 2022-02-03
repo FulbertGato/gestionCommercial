@@ -20,7 +20,6 @@ namespace gestion_com_2022.fabrique
                 LivreurDao = new LivreurDao(),
                 CategorieDao = new CategorieDao(),
                 ProduitDao = new ProduitDao(),
-                CommandeDao = new CommandeDao(),
             };
         }
     }

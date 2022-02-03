@@ -2,7 +2,6 @@
 using gestion_com_2022.service;
 using gestion_com_2022.views.ClientForm;
 using gestion_com_2022.views.GestionnaireForm;
-using gestion_com_2022.views.ProductForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,10 +61,8 @@ namespace gestion_com_2022.views.Authentification
                     
                     
                     if(user.Role == "ROLE_CLIENT"){
-                        // DashboardClient dashboardClient = new DashboardClient(user);
-                        // dashboardClient.Show();
-                        ProductlistShow productList = new ProductlistShow(service.searchClientByUserId(user.Id));
-                        productList.Show();
+                        DashboardClient dashboardClient = new DashboardClient(user);
+                        dashboardClient.Show();
                     }
                     else
                     {

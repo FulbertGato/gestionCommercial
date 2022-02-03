@@ -1,10 +1,4 @@
-﻿using gestion_com_2022.fabrique;
-using gestion_com_2022.service;
-using gestion_com_2022.utils;
-using gestion_com_2022.utils.ImageG;
-using gestion_com_2022.views.Authentification;
-using gestion_com_2022.views.ClientForm;
-using gestion_com_2022.views.ProductForm.component;
+﻿using gestion_com_2022.views.ProductForm.component;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,17 +13,8 @@ namespace gestion_com_2022.views.ProductForm
 {
     public partial class ProductlistShow : Form
     {
-
-        private IService service = Fabrique.getInstanceService();
-        private Client client;
         public ProductlistShow()
         {
-            InitializeComponent();
-        }
-
-        public ProductlistShow(Client client)
-        {
-            this.client = client;
             InitializeComponent();
         }
 
@@ -37,17 +22,15 @@ namespace gestion_com_2022.views.ProductForm
         {
             timer1.Stop();
             this.Opacity = 1;
-            // docker.WindowState = Bunifu.UI.WinForms.BunifuFormDock.FormWindowStates.Maximized;
+           // docker.WindowState = Bunifu.UI.WinForms.BunifuFormDock.FormWindowStates.Maximized;
         }
 
-        public void AddItem(string name, double cost, int id, int stock)
+        public void AddItem(string name, double cost)
         {
             var w = new productWidget()
             {
                 Title = name,
-                Prix = cost,
-                Id = id,
-                Stock = stock
+                Prix= cost,
 
 
             };
@@ -57,59 +40,23 @@ namespace gestion_com_2022.views.ProductForm
                 var wdg = (productWidget)ss;
                 foreach (DataGridViewRow item in grid.Rows)
                 {
-                    if (item.Cells[3].Value.ToString() == wdg.Id.ToString())
+                    if (item.Cells[0].Value.ToString() == wdg.lblProduitname.Text)
                     {
-
-                        if(wdg.Stock < int.Parse(item.Cells[1].Value.ToString()) + 1)
-                        {
-
-
-                            MessageBox.Show("Stock Insuffisant",
-                            "Stock inssufisant",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-                        
-
-                    }
-                        else
-                        {
-                            item.Cells[1].Value = int.Parse(item.Cells[1].Value.ToString()) + 1;
-
-                            item.Cells[2].Value = (int.Parse(item.Cells[1].Value.ToString()) * double.Parse(wdg.lblPrix.Text.Replace("CFA", ""))).ToString("C2");
-                        }
-                        
-                        
-
+                        item.Cells[1].Value = int.Parse(item.Cells[1].Value.ToString()) + 1;
+                        item.Cells[2].Value = (int.Parse(item.Cells[1].Value.ToString()) * double.Parse(wdg.lblPrix.Text.Replace("CFA", ""))).ToString("C2");
                         CalculateTotal();
                         return;
                     }
-
                 }
-                grid.Rows.Add(new object[] { wdg.lblProduitname.Text, 1, wdg.lblPrix.Text , wdg.Id,wdg.Stock});
+                grid.Rows.Add(new object[] { wdg.lblProduitname.Text, 1, wdg.lblPrix.Text });
                 CalculateTotal();
             };
         }
-       // private Byte[] biIm = { };
-       // private Image imgIcon;
+
         private void pageProductShown(object sender, EventArgs e)
         {
-           // List<Produit> listProduits = new List<Produit>();
-            System.Data.Entity.DbSet<Produit> catesLis = service.showAllProduits();
-            foreach (Produit prod in catesLis)
-            {
-               /* //  listProduits.Add(prod);
-                
-                foreach(Images im in prod.Images)
-                {
-                    this.biIm.Append(im.ImageByte);
-                    this.imgIcon = MyImage.convertByteToImage(this.biIm);
-                }
-               // Image img = MyImage.convertByteToImage();*/
-               AddItem(prod.Libelle, prod.Prix,prod.Id,prod.Stock);
-            }
-
-           
-            
+            AddItem("Fer", 7000);
+            AddItem("manioc", 7000);
            
         }
 
@@ -117,7 +64,7 @@ namespace gestion_com_2022.views.ProductForm
         {
 
         }
-       // string path = "All Items";
+        string path = "All Items";
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
@@ -135,7 +82,7 @@ namespace gestion_com_2022.views.ProductForm
         }
 
 
-        private double totalAPayer;
+
         void CalculateTotal()
         {
             double tot = 0;
@@ -143,148 +90,9 @@ namespace gestion_com_2022.views.ProductForm
             {
                 tot += double.Parse(item.Cells[2].Value.ToString().Replace("CFA", ""));
             }
-            this.totalAPayer = tot;
 
             lblTot.Text = tot.ToString("C2");
         }
 
-        private void ProductlistShow_Load(object sender, EventArgs e)
-        {
-
-            // List < Produit > listProduits = new List<Produit>();
-            System.Data.Entity.DbSet<Produit> catesLis = service.showAllProduits();
-            foreach (Produit prod in catesLis)
-            {
-                AddItem(prod.Libelle, prod.Prix, prod.Id,prod.Stock);
-               
-            }
-            if (this.client == null)
-            {
-                btnUser.Visible = false;
-                btnUser.Enabled = false;
-                btnAskDashboard.Enabled = false;
-                btnAskDashboard.Visible = false;
-                btnInscription.Enabled = true;
-                btnInscription.Visible = true;
-                btnSeConnecter.Enabled = true;
-                btnSeConnecter.Visible = true;
-
-            }
-            else
-            {
-                btnUser.Visible = true;
-                btnUser.Text = "BIENVENUE  :  "+this.client.Fullname.ToUpper();
-                btnUser.Enabled = true;
-                btnInscription.Enabled = false;
-                btnInscription.Visible = false;
-                btnSeConnecter.Enabled = false;
-                btnSeConnecter.Visible = false;
-                btnAskDashboard.Enabled = true;
-                btnAskDashboard.Visible = true;
-
-            }
-
-        }
-
-        private void btnSeConnecter_Click(object sender, EventArgs e)
-        {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
-        }
-
-        private void btnInscription_Click(object sender, EventArgs e)
-        {
-            registerForm register = new registerForm();
-            register.Show();
-            this.Hide();
-        }
-
-        private void btnAskDashboard_Click(object sender, EventArgs e)
-        {
-            DashboardClient dashboardClient = new DashboardClient(this.client);
-            dashboardClient.Show();
-            this.Hide();
-        }
-
-        private void btnCommander_Click(object sender, EventArgs e)
-        {
-            Commande cmd = createCommande();
-            int idCommande = service.addCommande(cmd);
-            if (idCommande >= 1)
-            {
-                MessageBox.Show("Commande passé",
-                            "Merci pour votre commande",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Commande non enregistrer",
-                            "error ",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-            }
-        }
-
-        private Commande createCommande()
-        {
-            List<DetailCommande> listeDetails = new List<DetailCommande>();
-            foreach (DataGridViewRow item in grid.Rows)
-            {
-                //tot += double.Parse(item.Cells[2].Value.ToString().Replace("CFA", ""));
-                Produit produit = service.findProduitById(int.Parse(item.Cells[3].Value.ToString()));
-                DetailCommande detail = new DetailCommande
-                {
-                    QteProduits = item.Cells[1].Value.ToString(),
-                    ProduitId = int.Parse(item.Cells[3].Value.ToString())
-
-                };
-                listeDetails.Add(detail);
-            }
-
-            Commande commande = new Commande
-            {
-    
-                DetailCommandes = listeDetails,
-                Montant = this.totalAPayer,
-                AdresseLivraison = this.client.Adresse,
-                Etat= "EN ATTENTE",
-                Date= DateTime.Now,
-                Numero= getReference(),
-                Client = this.client
-
-            };
-
-            return commande;
-
-        }
-
-
-        public static string getReference()
-        {
-            //si nbreProduit est sur 1 chiffre(1..9)  00Chiffre
-            //si nbreProduit est sur 2 chiffre(10..99) 02Chiffre
-            //si nbreProduit est sur 3 chiffre(10..99) 3Chiffre
-            string refProd;
-            //convertir le Nbre de Produits en chaine
-            int seq = MyFiles.generateSeqence();
-            string stringNbreProduit = string.Format("{0}", seq);
-            switch (stringNbreProduit.Length)
-            {
-                case 1:
-                    refProd = "REF00" + seq;
-                    break;
-                case 2:
-                    refProd = "REF0" + seq;
-                    break;
-                default:
-                    refProd = string.Format("REF{0}", seq);
-                    break;
-            }
-
-            return refProd;
-
-        }
     }
 }

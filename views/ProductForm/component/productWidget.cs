@@ -13,9 +13,6 @@ namespace gestion_com_2022.views.ProductForm.component
     public partial class productWidget : UserControl
     {
         private double _cost;
-        private int id;
-
-        private int stock;
         public event EventHandler OnSelect = null;
         public productWidget()
         {
@@ -30,9 +27,6 @@ namespace gestion_com_2022.views.ProductForm.component
         public string Title { get => lblProduitname.Text; set => lblProduitname.Text = value; }
         
         public double Prix { get => _cost; set { _cost = value; lblPrix.Text = _cost.ToString("C2"); } }
-
-        public int Id { get => id; set => id = value; }
-        public int Stock { get => stock; set => stock = value; }
-        //public Image Icon { get => imgImage.Image; set => imgImage.Image = value; }
+        // public Image Icon { get => imgImage.Image; set => imgImage.Image = value; }
     }
 }

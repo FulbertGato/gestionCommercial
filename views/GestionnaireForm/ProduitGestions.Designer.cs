@@ -49,19 +49,8 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.txtStock = new System.Windows.Forms.TextBox();
             this.labelLibelle = new System.Windows.Forms.Label();
             this.txtbLibelle = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgvProduits = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nom_Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QteSeuile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProduits)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -185,7 +174,6 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.btnUp.TabIndex = 10;
             this.btnUp.Text = "UP";
             this.btnUp.UseVisualStyleBackColor = false;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnAdd
             // 
@@ -278,88 +266,11 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.txtbLibelle.Size = new System.Drawing.Size(289, 26);
             this.txtbLibelle.TabIndex = 0;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.dtgvProduits);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(407, 26);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(680, 802);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Liste des Produits";
-            // 
-            // dtgvProduits
-            // 
-            this.dtgvProduits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvProduits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Libelle,
-            this.Nom_Prenom,
-            this.Login,
-            this.Role,
-            this.QteSeuile,
-            this.Categorie});
-            this.dtgvProduits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvProduits.Location = new System.Drawing.Point(3, 22);
-            this.dtgvProduits.Name = "dtgvProduits";
-            this.dtgvProduits.Size = new System.Drawing.Size(674, 777);
-            this.dtgvProduits.TabIndex = 0;
-            this.dtgvProduits.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.choixProduit);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Libelle
-            // 
-            this.Libelle.DataPropertyName = "Libelle";
-            this.Libelle.HeaderText = "Libelle";
-            this.Libelle.Name = "Libelle";
-            this.Libelle.ReadOnly = true;
-            // 
-            // Nom_Prenom
-            // 
-            this.Nom_Prenom.DataPropertyName = "Code";
-            this.Nom_Prenom.HeaderText = "Reference";
-            this.Nom_Prenom.Name = "Nom_Prenom";
-            // 
-            // Login
-            // 
-            this.Login.DataPropertyName = "Prix";
-            this.Login.HeaderText = "Prix";
-            this.Login.Name = "Login";
-            // 
-            // Role
-            // 
-            this.Role.DataPropertyName = "Stock";
-            this.Role.HeaderText = "QteStock";
-            this.Role.Name = "Role";
-            // 
-            // QteSeuile
-            // 
-            this.QteSeuile.DataPropertyName = "SeuilStock";
-            this.QteSeuile.HeaderText = "Qte seuile";
-            this.QteSeuile.Name = "QteSeuile";
-            // 
-            // Categorie
-            // 
-            this.Categorie.DataPropertyName = "Description";
-            this.Categorie.HeaderText = "Description";
-            this.Categorie.Name = "Categorie";
-            this.Categorie.Width = 110;
-            // 
             // ProduitGestions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1091, 840);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProduitGestions";
@@ -369,8 +280,6 @@ namespace gestion_com_2022.views.GestionnaireForm
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvProduits)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,14 +306,5 @@ namespace gestion_com_2022.views.GestionnaireForm
         private System.Windows.Forms.TextBox textDescription;
         private System.Windows.Forms.Label labelSeuilStock;
         private System.Windows.Forms.TextBox textSeuilStock;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dtgvProduits;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Libelle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nom_Prenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Login;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QteSeuile;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categorie;
     }
 }

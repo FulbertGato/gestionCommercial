@@ -94,7 +94,7 @@ namespace gestion_com_2022.views.GestionnaireForm
         private string code;
         private void dtgvCategories_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex <= dtgvCategories.Rows.Count - 1)
+            if (e.RowIndex >= 0 && e.RowIndex < dtgvCategories.Rows.Count - 1)
             {
 
                 FormUtils.desactiveFied(btnAdd, btnUp, btnDel, Action.UPDEL);

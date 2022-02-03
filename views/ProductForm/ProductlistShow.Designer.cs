@@ -39,15 +39,10 @@ namespace gestion_com_2022.views.ProductForm
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAskDashboard = new System.Windows.Forms.Button();
-            this.btnUser = new System.Windows.Forms.Button();
-            this.btn = new System.Windows.Forms.Button();
-            this.btnInscription = new System.Windows.Forms.Button();
-            this.btnSeConnecter = new System.Windows.Forms.Button();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.grid = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCommander = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.lblTot = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -59,9 +54,6 @@ namespace gestion_com_2022.views.ProductForm
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
             this.bunifuShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.panel3.SuspendLayout();
@@ -70,67 +62,11 @@ namespace gestion_com_2022.views.ProductForm
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.Controls.Add(this.btnAskDashboard);
-            this.panel1.Controls.Add(this.btnUser);
-            this.panel1.Controls.Add(this.btn);
-            this.panel1.Controls.Add(this.btnInscription);
-            this.panel1.Controls.Add(this.btnSeConnecter);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1575, 69);
             this.panel1.TabIndex = 0;
-            // 
-            // btnAskDashboard
-            // 
-            this.btnAskDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAskDashboard.Location = new System.Drawing.Point(932, 9);
-            this.btnAskDashboard.Name = "btnAskDashboard";
-            this.btnAskDashboard.Size = new System.Drawing.Size(310, 52);
-            this.btnAskDashboard.TabIndex = 4;
-            this.btnAskDashboard.Text = "MON ESPACE CLIENT";
-            this.btnAskDashboard.UseVisualStyleBackColor = true;
-            this.btnAskDashboard.Click += new System.EventHandler(this.btnAskDashboard_Click);
-            // 
-            // btnUser
-            // 
-            this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUser.Location = new System.Drawing.Point(12, 12);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(853, 52);
-            this.btnUser.TabIndex = 3;
-            this.btnUser.Text = "BIENVENUE  :  GATO JUNIOR";
-            this.btnUser.UseVisualStyleBackColor = true;
-            // 
-            // btn
-            // 
-            this.btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn.Location = new System.Drawing.Point(1248, 12);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(310, 52);
-            this.btn.TabIndex = 2;
-            this.btn.Text = "BOUTIQUE NASA ";
-            this.btn.UseVisualStyleBackColor = true;
-            // 
-            // btnInscription
-            // 
-            this.btnInscription.Location = new System.Drawing.Point(174, 12);
-            this.btnInscription.Name = "btnInscription";
-            this.btnInscription.Size = new System.Drawing.Size(156, 52);
-            this.btnInscription.TabIndex = 1;
-            this.btnInscription.Text = "S\' inscrire maintenant";
-            this.btnInscription.UseVisualStyleBackColor = true;
-            this.btnInscription.Click += new System.EventHandler(this.btnInscription_Click);
-            // 
-            // btnSeConnecter
-            // 
-            this.btnSeConnecter.Location = new System.Drawing.Point(12, 12);
-            this.btnSeConnecter.Name = "btnSeConnecter";
-            this.btnSeConnecter.Size = new System.Drawing.Size(156, 52);
-            this.btnSeConnecter.TabIndex = 0;
-            this.btnSeConnecter.Text = "Se connecter";
-            this.btnSeConnecter.UseVisualStyleBackColor = true;
-            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // bunifuShadowPanel1
             // 
@@ -183,9 +119,7 @@ namespace gestion_com_2022.views.ProductForm
             this.grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3,
-            this.ID,
-            this.Stock});
+            this.Column3});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,7 +147,7 @@ namespace gestion_com_2022.views.ProductForm
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.btnCommander);
+            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.lblTot);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(13, 563);
@@ -221,21 +155,20 @@ namespace gestion_com_2022.views.ProductForm
             this.panel3.Size = new System.Drawing.Size(561, 179);
             this.panel3.TabIndex = 5;
             // 
-            // btnCommander
+            // button2
             // 
-            this.btnCommander.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCommander.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCommander.FlatAppearance.BorderSize = 0;
-            this.btnCommander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCommander.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.btnCommander.ForeColor = System.Drawing.Color.White;
-            this.btnCommander.Location = new System.Drawing.Point(16, 99);
-            this.btnCommander.Name = "btnCommander";
-            this.btnCommander.Size = new System.Drawing.Size(531, 65);
-            this.btnCommander.TabIndex = 5;
-            this.btnCommander.Text = "Commandez ";
-            this.btnCommander.UseVisualStyleBackColor = false;
-            this.btnCommander.Click += new System.EventHandler(this.btnCommander_Click);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(16, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(531, 65);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Pay";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // lblTot
             // 
@@ -437,22 +370,6 @@ namespace gestion_com_2022.views.ProductForm
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "STOCK";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            this.Stock.Visible = false;
-            // 
             // ProductlistShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,9 +383,7 @@ namespace gestion_com_2022.views.ProductForm
             this.Name = "ProductlistShow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductlistShow";
-            this.Load += new System.EventHandler(this.ProductlistShow_Load);
-            this.Shown += new System.EventHandler(this.timer1_Tick);
-            this.panel1.ResumeLayout(false);
+            this.Shown += new System.EventHandler(this.pageProductShown);
             this.bunifuShadowPanel1.ResumeLayout(false);
             this.bunifuShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
@@ -484,7 +399,7 @@ namespace gestion_com_2022.views.ProductForm
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private System.Windows.Forms.DataGridView grid;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnCommander;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblTot;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
@@ -493,15 +408,8 @@ namespace gestion_com_2022.views.ProductForm
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private System.Windows.Forms.Timer timer1;
         private Bunifu.UI.WinForms.BunifuFormDock docker;
-        private System.Windows.Forms.Button btnSeConnecter;
-        private System.Windows.Forms.Button btnInscription;
-        private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button btnAskDashboard;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
     }
 }

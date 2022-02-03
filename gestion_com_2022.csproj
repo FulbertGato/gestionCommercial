@@ -231,7 +231,6 @@
     </Compile>
     <Compile Include="utils\Forms\FormUtils.cs" />
     <Compile Include="utils\ImageG\MyImage.cs" />
-    <Compile Include="utils\MyFiles.cs" />
     <Compile Include="utils\PasswordEncoder.cs" />
     <Compile Include="utils\Validation\Validator.cs" />
     <Compile Include="views\Authentification\Login.cs">
