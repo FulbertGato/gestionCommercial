@@ -1,6 +1,7 @@
 ﻿using gestion_com_2022.dto;
 using gestion_com_2022.fabrique;
 using gestion_com_2022.service;
+using gestion_com_2022.views.ClientForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +65,11 @@ namespace gestion_com_2022.views.CommandeForm
 
         private void CommandeDetailFrm_Load(object sender, EventArgs e)
         {
+
+            if(this.commande.Etat != "EN COURS")
+            {
+                btnPayCommande.Enabled = false;
+            }
             txtbCmdAdresse.Text = this.commande.AdresseLivraison;
             txtbCmdNomComplet.Text = this.userConnect.Fullname;
             txtbCmdTel.Text = this.userConnect.Telephone;
@@ -81,7 +87,8 @@ namespace gestion_com_2022.views.CommandeForm
 
         private void btnPayCommande_Click(object sender, EventArgs e)
         {
-
+            PaiementFrm paiem = new PaiementFrm(this.userConnect,this.commande);
+            paiem.Show();
         }
     }
 

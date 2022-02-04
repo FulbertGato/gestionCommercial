@@ -22,7 +22,8 @@ namespace gestion_com_2022.fabrique
                 ProduitDao = new ProduitDao(),
                 CommandeDao = new CommandeDao(),
                 DetailCommandesDao = new DetailCommandeDao(),
-                LivraisonDao = new LivraisonDao()
+                LivraisonDao = new LivraisonDao(),
+                PaiementDao = new PaiementDao()
             };
         }
     }

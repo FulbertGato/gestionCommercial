@@ -144,8 +144,14 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Mailjet.Client, Version=2.0.2.0, Culture=neutral, PublicKeyToken=c297171c8bcce79f, processorArchitecture=MSIL">
+      <HintPath>packages\Mailjet.Api.2.0.2\lib\net45\Mailjet.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=107.2.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>packages\RestSharp.107.2.0\lib\netstandard2.0\RestSharp.dll</HintPath>
@@ -299,6 +305,12 @@
     <Compile Include="views\ClientForm\DashboardClient.Designer.cs">
       <DependentUpon>DashboardClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\ClientForm\PaiementFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\ClientForm\PaiementFrm.Designer.cs">
+      <DependentUpon>PaiementFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\CommandeForm\CommandeDetailFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ClientForm\DashboardClient.resx">
       <DependentUpon>DashboardClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\ClientForm\PaiementFrm.resx">
+      <DependentUpon>PaiementFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\CommandeForm\CommandeDetailFrm.resx">
       <DependentUpon>CommandeDetailFrm.cs</DependentUpon>

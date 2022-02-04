@@ -66,6 +66,7 @@ namespace gestion_com_2022.views.Authentification
                 {
                     NotificationSend sendNotif = new NotificationSend();
                     sendNotif.emailSend(user.Login,"COMPTE CREER", "VOTRE COMPTE EST BIEN CREER");
+                   // sendNotif.sendMailApiAsync();
                   
                    Login login = new Login();
                     login.Show();

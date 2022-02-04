@@ -16,5 +16,7 @@ namespace gestion_com_2022.dao.interfaces
         List<Commande> findAllCommande(string statut);
         List<Commande> findAllCommandeTelClient(string tel);
         int updateCommandeLivraison(Commande cmde);
+       
+        int CommandeStatusUpdate(string v, int id);
     }
 }

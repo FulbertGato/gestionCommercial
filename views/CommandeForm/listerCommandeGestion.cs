@@ -57,9 +57,10 @@ namespace gestion_com_2022.views.CommandeForm
         {
             List<String> listEtat = new List<String>();
             listEtat.Add("EN ATTENTE");
-            listEtat.Add("EN COURS");           
+            listEtat.Add("EN COURS");
+            listEtat.Add("PAYER");
             listEtat.Add("ANNULER");
-            listEtat.Add("TERMINER");
+            
 
 
             cbxEtat.DataSource = listEtat;

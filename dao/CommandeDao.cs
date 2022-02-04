@@ -12,6 +12,14 @@ namespace gestion_com_2022.dao
     public class CommandeDao : ICommandeDao
     {
         Model1Container model = new Model1Container();
+
+        public int CommandeStatusUpdate(string v, int id)
+        {
+           Commande commande = model.Commandes.Find(id);
+            commande.Etat = v;
+            return model.SaveChanges();
+        }
+
         public int delete(int id)
         {
             throw new NotImplementedException();

@@ -20,6 +20,7 @@ namespace gestion_com_2022.service
         private ICommandeDao commandeDao;
         private IDetailCommandesDao detailCommandesDao;
         private ILivraisonDao livraisonDao;
+        private IPaiementDao paiementDao;
 
         public Service()
         {
@@ -27,7 +28,7 @@ namespace gestion_com_2022.service
 
 
         
-        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao, ICommandeDao commandeDao, IDetailCommandesDao detailCommandesDao, ILivraisonDao livraisonDao)
+        public Service(IUserDao userDao, IClientDao clientDao, ILivreurDao livreurDao, ICategorieDao categorieDao, IProduitDao produitDao, ICommandeDao commandeDao, IDetailCommandesDao detailCommandesDao, ILivraisonDao livraisonDao, IPaiementDao paiementDao)
         {
             this.userDao = userDao;
             this.clientDao = clientDao;
@@ -37,6 +38,7 @@ namespace gestion_com_2022.service
             this.commandeDao = commandeDao;
             this.DetailCommandesDao = detailCommandesDao;
             this.livraisonDao = livraisonDao;
+            this.paiementDao = paiementDao;
 
 
 
@@ -50,6 +52,7 @@ namespace gestion_com_2022.service
         public ICommandeDao CommandeDao { get => commandeDao; set => commandeDao = value; }
         public IDetailCommandesDao DetailCommandesDao { get => detailCommandesDao; set => detailCommandesDao = value; }
         public ILivraisonDao LivraisonDao { get => livraisonDao; set => livraisonDao = value; }
+        public IPaiementDao PaiementDao { get => paiementDao; set => paiementDao = value; }
 
         public int addCategorie(Categorie cat)
         {
@@ -206,6 +209,16 @@ namespace gestion_com_2022.service
         public int stockProduitupdtade(int id, int stock)
         {
             return this.produitDao.update(id,stock);
+        }
+
+        public int addPaiement(Paiement paiement)
+        {
+            return this.paiementDao.insert(paiement);
+        }
+
+        public int updateCommandeStatus(string v, int id)
+        {
+            return this.commandeDao.CommandeStatusUpdate(v,id);
         }
     }
 }

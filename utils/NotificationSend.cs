@@ -1,10 +1,14 @@
-﻿using RestSharp;
+﻿using Mailjet.Client;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
+using Mailjet.Client.Resources;
+using Newtonsoft.Json.Linq;
+using Mailjet.Client.TransactionalEmails;
 
 namespace gestion_com_2022.utils
 {
@@ -57,5 +61,36 @@ namespace gestion_com_2022.utils
                // MessageBox.Show(ex.ToString());
             }
         }
+
+        /*public async Task sendMailApiAsync()
+        {
+            
+
+            MailjetClient client = new MailjetClient(
+            Environment.GetEnvironmentVariable("5bfcc317485b41ca05ec3804101539b6"),
+            Environment.GetEnvironmentVariable("c23bab5fcfcc4e5fa1295d21e580c42"));
+
+            MailjetRequest request = new MailjetRequest
+            {
+                Resource = Send.Resource,
+            };
+
+            // construct your email with builder
+            var email = new TransactionalEmailBuilder()
+                   .WithFrom(new SendContact("dev@gatojunior.co"))
+                   .WithSubject("Test subject")
+                   .WithHtmlPart("<h1>Header</h1>")
+                   .WithTo(new SendContact("gatojunior.co@gmail.com"))
+                   .Build();
+
+            // invoke API to send email
+            var response = await client.SendTransactionalEmailAsync(email);
+
+            // check response
+           // Assert.AreEqual(1, response.Messages.Length);
+
+
+
+        }*/
     }
 }

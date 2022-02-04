@@ -168,6 +168,7 @@ namespace gestion_com_2022.views.ProductForm
                 btnInscription.Visible = true;
                 btnSeConnecter.Enabled = true;
                 btnSeConnecter.Visible = true;
+                btnCommander.Enabled = false;
 
             }
             else
@@ -181,6 +182,7 @@ namespace gestion_com_2022.views.ProductForm
                 btnSeConnecter.Visible = false;
                 btnAskDashboard.Enabled = true;
                 btnAskDashboard.Visible = true;
+                btnCommander.Enabled = true;
 
             }
 
@@ -210,6 +212,8 @@ namespace gestion_com_2022.views.ProductForm
         private void btnCommander_Click(object sender, EventArgs e)
         {
             createCommande();
+            NotificationSend sendNotif = new NotificationSend();
+            sendNotif.emailSend(this.client.Login, "Merci pour votre commande", "Nous enregistrons votre commande ");
             MessageBox.Show("Commande passé",
                             "Merci pour votre commande",
                             MessageBoxButtons.OK,
